@@ -1,0 +1,19 @@
+{
+  "name": "learning",
+  "version": "1.0.0",
+  "description": "this is for learning purpose",
+  "main": "entry.js",
+  "scripts": {
+    "test": "npm run jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krishna63/reactPractise.git"
+  },
+  "author": "saikrishna",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/krishna63/reactPractise/issues"
+  },
+  "homepage": "https://github.com/krishna63/reactPractise#readme"
+}

@@ -6,6 +6,13 @@
     { "id": 4, "Name": "Venkatesh" },
     { "id": 5, "Name": "Chiranjeevi" }
   ],
+  "deviceNames": [
+    { "id": 10, "Name": "Galaxy S10" },
+    { "id": 11, "Name": "Moto G" },
+    { "id": 12, "Name": "One plus" },
+    { "id": 13, "Name": "Galaxy J9" },
+    { "id": 14, "Name": "Nokia N70" }
+  ],
   "comments": [
     { "id": 1, "body": "some comment", "postId": 1 },
     { "id": 2, "body": "some comment", "postId": 1 }

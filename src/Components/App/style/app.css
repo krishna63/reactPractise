@@ -1,0 +1,13 @@
+#wrapper {
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+}
+h1 {
+	color: orange;
+	padding: 5px;
+	border: 1px solid #dedede;
+	border-radius: 5px;
+	text-align: center;
+	display: block;
+}

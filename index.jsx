@@ -1,10 +1,5 @@
 import React from 'react';
 import {render} from 'react-dom';
-
-function App() {
-	return (
-		<div>Welcome to reselect and sagassss</div>
-	)
-}
+import App from './src/Components/App';
  
 render(<App />, document.getElementById('container'));

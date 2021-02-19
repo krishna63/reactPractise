@@ -16,6 +16,7 @@ const MyButton = (props) => {
   return (
     <>
       <h5>{`Current click count is ${clickCount}`}</h5>
+      <h6>The increment is going to happen with a delay, so you can expect a slight delay</h6>
       <button onClick={handleIncrement}>Increment</button>
       <button onClick={handleDecrement}>Decrement</button>
     </>

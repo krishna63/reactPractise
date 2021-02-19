@@ -11,7 +11,7 @@
     "start": "webpack serve --open",
     "test": "jest",
     "test:coverage": "jest --collectCoverage",
-    "commitmsg": "npm run prettify & git add & validate-commit-msg"
+    "commitmsg": "npm run prettify & git add . & validate-commit-msg"
   },
   "repository": {
     "type": "git",

@@ -6,9 +6,7 @@ const initialCountState = {
 function ButtonCountReducer(state = initialCountState, action) {
   switch (action.type) {
     case BUTTON_CLICK_ACTION_SUCCESS:
-      const {
-        decrement
-      } = action;
+      const { decrement } = action;
       return {
         clickCount: decrement ? --state.clickCount : state.clickCount++,
       };

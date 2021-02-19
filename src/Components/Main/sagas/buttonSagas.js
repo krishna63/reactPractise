@@ -1,9 +1,5 @@
 import { put, call, takeEvery } from 'redux-saga/effects';
-import { 
-  BUTTON_CLICK_ACTION_SUCCESS,
-  INCREMENT_COUNT_ASYNC,
-  DECREMENT_COUNT_ASYNC,
- } from '../actions';
+import { BUTTON_CLICK_ACTION_SUCCESS, INCREMENT_COUNT_ASYNC, DECREMENT_COUNT_ASYNC } from '../actions';
 
 const delay = (ms) => {
   let promiseObj = new Promise((resolve, reject) => {

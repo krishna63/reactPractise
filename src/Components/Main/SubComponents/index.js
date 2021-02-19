@@ -1,4 +1,2 @@
-import MyButton from "./Button.jsx";
-export {
-	MyButton
-};
+import MyButton from './Button.jsx';
+export { MyButton };

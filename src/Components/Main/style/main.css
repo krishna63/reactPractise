@@ -1,11 +1,11 @@
 #main {
-	border: 1px solid #dedede;
-	padding: 10px;
-	flex-grow: 3;
-	border-left: 0px;
-	border-radius: 3px;
+  border: 1px solid #dedede;
+  padding: 10px;
+  flex-grow: 3;
+  border-left: 0px;
+  border-radius: 3px;
 }
 
 button {
-	margin: 5px;
+  margin: 5px;
 }

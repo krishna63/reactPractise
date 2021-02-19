@@ -7,5 +7,3 @@ Writing test cases with Sagas
 
 React Context provider
 React Intl
-
-

@@ -1,12 +1,10 @@
-import {
-	combineReducers
-} from 'redux';
+import { combineReducers } from 'redux';
 import sideNavigatorReducer from '../../Components/SideNavigator/reducer';
-import ButtonCountReducer from "../../Components/Main/reducer";
+import ButtonCountReducer from '../../Components/Main/reducer';
 
 const rootReducer = combineReducers({
-	sideNavigatorReducer,
-	ButtonCountReducer
+  sideNavigatorReducer,
+  ButtonCountReducer,
 });
 
 export default rootReducer;

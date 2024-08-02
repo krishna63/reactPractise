@@ -14,6 +14,7 @@ module.exports = {
   devServer: {
     static: './dist',
     hot: true,
+    port: 6018
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.css'], // Add the extensions you want to resolve

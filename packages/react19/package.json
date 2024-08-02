@@ -7,7 +7,7 @@
     "build": "webpack",
     "lint": "eslint 'src/**/*.{js,ts,tsx}'",
     "format": "prettier --write 'src/**/*.{js,ts,tsx,json,css,scss,md}'",
-    "start": "webpack serve --open --watch"
+    "start": "webpack serve --open"
   },
   "dependencies": {
     "@types/node": "^20.14.10",

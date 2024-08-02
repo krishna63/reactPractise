@@ -1,68 +1,10 @@
 {
-  "name": "learning",
-  "version": "1.0.0",
-  "description": "this is for learning purpose",
-  "main": "entry.js",
-  "scripts": {
-    "build": "webpack --mode production",
-    "build:dev": "webpack --mode development",
-    "lint": "eslint src",
-    "prettify": "prettier --write src",
-    "start": "webpack serve --open",
-    "test": "jest",
-    "test:coverage": "jest --collectCoverage",
-    "commitmsg": "npm run prettify & git add . & validate-commit-msg"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/krishna63/reactPractise.git"
-  },
-  "author": "saikrishna",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/krishna63/reactPractise/issues"
-  },
-  "homepage": "https://github.com/krishna63/reactPractise#readme",
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "devDependencies": {
-    "@babel/cli": "^7.12.10",
-    "@babel/core": "^7.12.10",
-    "@babel/plugin-transform-runtime": "^7.12.17",
-    "@typescript-eslint/eslint-plugin": "^2.7.0",
-    "@typescript-eslint/parser": "^2.7.0",
-    "babel-loader": "^8.2.2",
-    "commitlint": "^8.3.5",
-    "concurrently": "^5.0.0",
-    "eslint": "^6.6.0",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-plugin-flowtype": "^4.2.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-prettier": "^3.1.1",
-    "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-react-hooks": "^2.2.0",
-    "html-webpack-plugin": "^5.0.0-beta.4",
-    "husky": "^0.13.4",
-    "prettier": "^2.2.1",
-    "pretty-quick": "^3.1.0",
-    "sass-loader": "^10.1.0",
-    "validate-commit-msg": "^2.12.1",
-    "webpack": "^5.12.2",
-    "webpack-cli": "^4.3.1",
-    "webpack-dev-server": "^3.11.1"
-  },
-  "dependencies": {
-    "@babel/preset-env": "^7.12.11",
-    "@babel/preset-react": "^7.12.10",
-    "@testing-library/react": "^11.2.3",
-    "css-loader": "^5.0.1",
-    "jest": "^26.6.3",
-    "prop-types": "^15.7.2",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-redux": "^7.2.2",
-    "redux": "^4.0.5",
-    "redux-saga": "^1.1.3",
-    "reselect": "^4.0.0",
-    "style-loader": "^2.0.0"
+    "lerna": "^6.6.1"
   }
 }

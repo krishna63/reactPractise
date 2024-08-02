@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './style/sideNavigator.css';
+//import './style/sideNavigator.css';
 
 const SideNavigator = (props) => {
   const { listItems } = props;
@@ -8,11 +8,11 @@ const SideNavigator = (props) => {
   return (
     <nav id="sideNavigator">
       <h4>Side Navigator</h4>
-      <ul>
+      {listItems.length && <ul>
         {listItems.map((item, idx) => {
-          return <li key={`item_${idx}`}>{item.dName}</li>;
+          return <li key={`item_${idx}`} className="side_item">{item.dName}</li>;
         })}
-      </ul>
+      </ul>}
     </nav>
   );
 };

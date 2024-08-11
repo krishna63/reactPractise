@@ -2,8 +2,8 @@
     "$schema": "https://swc.rs/schema.json",
     "jsc": {
         "parser": {
-            "syntax": "ecmascript",
-            "jsx": false,
+            "syntax": "typescript",
+            "tsx": true,
             "dynamicImport": false,
             "privateMethod": false,
             "functionBind": false,

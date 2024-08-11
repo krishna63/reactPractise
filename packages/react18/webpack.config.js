@@ -14,7 +14,13 @@ module.exports = {
   devServer: {
     static: './dist',
     hot: true,
-    port: 6018
+    port: 6018,
+    proxy: [
+      {
+        context: ['/saveUserName'],
+        target: 'http://localhost:5999',
+      },
+    ],
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.css'], // Add the extensions you want to resolve
@@ -33,7 +39,7 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       {
-        test: /\.tsx$/,
+        test: /\.(js|jsx|ts|tsx)$/,
         exclude: /(node_modules)/,
         use: {
           // `.swcrc` can be used to configure swc

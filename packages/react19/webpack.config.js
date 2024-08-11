@@ -8,13 +8,19 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    clean: true
+    clean: true,
   },
   devtool: 'inline-source-map',
   devServer: {
     static: './dist',
     hot: true,
     port: 6019,
+    proxy: [
+      {
+        context: ['/saveUserName', '/updateMessageList'],
+        target: 'http://localhost:5999',
+      },
+    ],
   },
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.css'], // Add the extensions you want to resolve
@@ -22,7 +28,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Output Management',
-      template: path.resolve(__dirname, 'src', 'index.html')
+      template: path.resolve(__dirname, 'src', 'index.html'),
     }),
     new webpack.HotModuleReplacementPlugin(),
   ],
@@ -37,9 +43,9 @@ module.exports = {
         exclude: /(node_modules)/,
         use: {
           // `.swcrc` can be used to configure swc
-          loader: "swc-loader"
-        }
-      }
+          loader: 'swc-loader',
+        },
+      },
     ],
   },
 };

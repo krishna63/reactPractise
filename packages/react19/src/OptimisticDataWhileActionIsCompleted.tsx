@@ -1,5 +1,5 @@
 import React, {
-    FormEvent, FormEventHandler, useActionState,
+    useActionState,
     useState,
     useOptimistic
 } from "react"
@@ -39,13 +39,16 @@ interface optimisticProps {
 
 
 export const OptimisticDataWhileActionIsGoingOn = ({ messages, afterMessageUpdate }: optimisticProps) => {
-    const [messagesList, addOptimisticValueFnRef] = useOptimistic(messages, (currentState, optimisticValue) => {
-        console.log("inside use optimistic hook update functions", optimisticValue)
+
+    const [messagesList, addOptimisticValueFnRef] = useOptimistic(messages, (currentState: Array<string>, optimisticValue: string) => {
+        console.log("inside use optimistic hook update functions", optimisticValue, messages)
         return [...currentState, optimisticValue]
     })
-    const [baseFormState, formAction, isPending] = useActionState(async (currentFormValue, formData: FormData) => {
+
+    //@ts-ignores
+    const [baseFormState, formAction, isPending] = useActionState(async (currentFormValue: string, formData: FormData) => {
         console.log('use action state', currentFormValue)
-        addOptimisticValueFnRef(`${formData.get("customMessage")} - isPending ${isPending}`)
+        addOptimisticValueFnRef(`${formData.get("customMessage")} - isPending ${isPending}, so showing Optimistic message`)
         const resp = await updateMessageList(formData.get("customMessage") as string)
         const updatedMessageList = await resp.json();
         afterMessageUpdate(updatedMessageList)
@@ -69,9 +72,10 @@ export const OptimisticDataWhileActionIsGoingOn = ({ messages, afterMessageUpdat
                     <li>
                         useOptimistic takes in two arguments
                         <ul>
-                            <li>Initial value of the property </li>
+                            <li>Initial value that has to be assigned to the property(in this case it is messageList) </li>
                             <li>
-                                A function to execute when the action is in pending state.
+                                An update function to execute when the action is in pending state and it can be called
+                                as an required.
                             </li>
                         </ul>
                     </li>

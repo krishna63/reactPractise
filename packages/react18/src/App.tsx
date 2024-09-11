@@ -1,7 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { AppWithoutTransition } from './components/AppWithoutTransition'
-import { AppWithTransition } from './components/AppWithTransition';
-import { PersistInput } from './PersistInput/PersistInput';
+import React, { useEffect, useRef } from 'react'
 
 const ChildComponent = React.forwardRef<HTMLInputElement>((props: any, inputElementRef) => {
     const { ipValue } = props;
@@ -24,13 +21,10 @@ export function App() {
     })
     return (
         <>
-            {/* <AppWithoutTransition />
-            <AppWithTransition />
-            <PersistInput /> */}
             <h2> Forward ref is used to access the child element from the parent</h2>
-            <ChildComponent ipValue={'test'}
+            {/* <ChildComponent ipValue={'test'}
                 ref={inputElementRef}
-            />
+            /> */}
         </>
     )
 }

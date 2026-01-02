@@ -18,9 +18,9 @@ app.get("/saveUserName", (req, res) => {
     data: [1, 2, 3],
   };
   res.writeHead(200, { "Content-Type": "application/json" });
-  setTimeout(() => {
-    res.end(JSON.stringify(data));
-  }, 1000);
+  //setTimeout(() => {
+  res.end(JSON.stringify(data));
+  //}, 10000);
 });
 
 const messageList = ["First Message", "Second Message", "Third Message"];

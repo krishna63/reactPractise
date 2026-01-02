@@ -19,18 +19,22 @@ export function PersistInput() {
     const [firstName, setFirstName] = useState<string>('')
     const [pending, setPending] = useState<boolean>(false)
     const [beResponse, setBEResponse] = useState<any>({ userNameInBE: '' });
+    const [hideContent, setHideContent] = useState<boolean>(true);
 
     const handleUserNameChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
         setFirstName(target.value)
     }
 
     const handleUserNameSave = async (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
+        // e.preventDefault();
         setPending(true);
         const resp = await updateFirstName(firstName);
         const saveNameResponse = await resp.json();
         setBEResponse(saveNameResponse)
         setPending(false)
+    }
+    const handleToggleContent = () => {
+        setHideContent(!hideContent)
     }
 
     return (
@@ -50,6 +54,12 @@ export function PersistInput() {
             <button type="submit">
                 {pending ? 'Updating...' : 'Update'}
             </button>
+            {/* {!hideContent && <p>As the above action is taking time, i wont be rendered on the UI till that is completed!!!
+                basically JS thread is blocked in other words application page is <em>Freezed!!!!</em>
+            </p>}
+            <button onClick={handleToggleContent}>
+                Click me after hitting the Submit Button
+            </button> */}
         </form>
     )
 }
@@ -137,7 +147,6 @@ export function PersistInputWithUseActionState() {
      */
     const [beResponse, actionFromHook, isPending] = useActionState(async (currentValue: string, formData: FormData) => {
         const userProvidedFirstName = formData.get('fName') as string;
-        console.log('-------')
         const resp = await updateFirstName(userProvidedFirstName);
         const saveNameResponse = await resp.json();
         return saveNameResponse;

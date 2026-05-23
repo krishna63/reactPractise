@@ -1,0 +1,31 @@
+name: Build
+
+on:
+  workflow_dispatch:
+    inputs:
+      deployEnvironment:
+        description: 'Select deploying Environment'
+        required: true
+        type: choice
+        options:
+          - dev
+          - qa
+          - prod
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm ci
+
+      - name: Build
+        run: npm run build
+        env:
+          BUILD_ENV: ${{ github.event.inputs.deployEnvironment }}

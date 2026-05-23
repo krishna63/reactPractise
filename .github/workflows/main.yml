@@ -23,6 +23,11 @@ jobs:
         with:
           node-version: 20
 
+      - name: Debug
+        run: echo "BUILD_ENV=$BUILD_ENV"
+        env:
+          BUILD_ENV: ${{ github.event.inputs.deployEnvironment }}
+
       - name: Build
         run: npm run build
         env:

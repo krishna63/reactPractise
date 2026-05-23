@@ -8,6 +8,7 @@
     "lerna": "^6.6.1"
   },
   "scripts": {
+    "build": "echo ${BUILD_ENV}",
     "start": "lerna run start"
   }
 }

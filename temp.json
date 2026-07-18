@@ -1,0 +1,51 @@
+# Master Taxonomy Mapping for Verizon (VZ), T-Mobile (TMUS), and AT&T (T)
+TELECOM_TAXONOMY_MAP = {
+    "total_assets": {
+        "description": "Total assets held by the consolidated company",
+        "VZ": ["Assets"],
+        "TMUS": ["Assets"],
+        "T": ["Assets"]
+    },
+    "cash_position": {
+        "description": "Cash and highly liquid short-term cash equivalents",
+        "VZ": ["CashAndCashEquivalentsAtCarryingValue"],
+        "TMUS": ["CashAndCashEquivalentsAtCarryingValue"],
+        "T": ["CashAndCashEquivalentsAtCarryingValue"]
+    },
+    "current_assets": {
+        "description": "Assets expected to be converted to cash within one year",
+        "VZ": ["AssetsCurrent"],
+        "TMUS": ["AssetsCurrent"],
+        "T": ["AssetsCurrent"]
+    },
+    "operating_income": {
+        "description": "EBIT / Earnings before interest and taxes",
+        "VZ": ["OperatingIncomeLoss"],
+        "TMUS": ["OperatingIncomeLoss"],
+        "T": ["OperatingIncomeLoss"]
+    },
+    "total_revenue": {
+        "description": "Top-line gross revenue generated from operations",
+        "VZ": ["Revenues"],
+        "TMUS": ["RevenueFromContractWithCustomerExcludingAssessedTax", "Revenues"],
+        "T": ["SalesRevenueNet", "Revenues"]
+    },
+    "net_income": {
+        "description": "Bottom-line net profit after all expenses, interest, and taxes",
+        "VZ": ["NetIncomeLoss"],
+        "TMUS": ["NetIncomeLoss"],
+        "T": ["NetIncomeLoss"]
+    },
+    "depreciation_amortization": {
+        "description": "Non-cash D&A charges used to derive EBITDA from EBIT",
+        "VZ": ["DepreciationDepletionAndAmortization"],
+        "TMUS": ["DepreciationAndAmortization"],
+        "T": ["DepreciationDepletionAndAmortization"]
+    },
+    "long_term_debt": {
+        "description": "Long-term financial obligations/bonds outstanding",
+        "VZ": ["LongTermDebtNoncurrent"],
+        "TMUS": ["LongTermDebtNoncurrent"],
+        "T": ["LongTermDebtNoncurrent"]
+    }
+}
